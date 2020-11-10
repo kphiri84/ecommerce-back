@@ -16,6 +16,7 @@ require('./app/routes/user.routes')(app);
 require('./app/routes/product.routes')(app);
 require('./app/routes/category.routes')(app);
 require('./app/routes/productcategory.routes')(app);
+require('./app/routes/adress.routes')(app);
 
 app.get("/", (req, res) => {
     res.json({message: "Hello World"})

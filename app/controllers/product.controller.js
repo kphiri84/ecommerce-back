@@ -13,7 +13,7 @@ exports.getAllProducts = (req, res) => {
 };
 
 exports.getOneProduct = (req, res) => {
-	Product.findByPk(req.params.id).then((products) => res.json([ products ])).catch((err) => {
+	Product.findByPk(req.params.id).then((products) => res.json( products )).catch((err) => {
 		return res.status(400).send(err.message);
 	});
 };

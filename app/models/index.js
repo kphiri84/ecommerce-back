@@ -24,6 +24,7 @@ db.category = require('../models/category.model')(sequelize, Sequelize);
 db.product = require('../models/product.model')(sequelize, Sequelize);
 db.productCategory = require('../models/productCategory.model')(sequelize, Sequelize);
 db.review = require('../models/review.model')(sequelize, Sequelize);
+db.adress = require('../models/adress.model')(sequelize, Sequelize);
 
 // db.user.belongsToMany(db.route, {
 //     through: "user_routes",
@@ -32,6 +33,7 @@ db.review = require('../models/review.model')(sequelize, Sequelize);
 // })
 
 db.user.hasMany(db.review);
+db.user.hasMany(db.adress);
 
 db.category.hasMany(db.productCategory);
 db.category.belongsToMany(db.product, { through: db.productCategory });
@@ -46,5 +48,7 @@ db.productCategory.belongsTo(db.category);
 
 db.review.belongsTo(db.product);
 db.review.belongsTo(db.user);
+
+db.adress.belongsTo(db.user);
 
 module.exports = db;
